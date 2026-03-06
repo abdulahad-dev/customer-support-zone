@@ -7,7 +7,7 @@ const Navbar = () => {
         <a className="text-xl font-bold cursor-pointer">CS — Ticket System</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 font-bold">
+        <ul className="menu menu-horizontal px-1">
           <li className="justify-center">
             <a>Home</a>
           </li>

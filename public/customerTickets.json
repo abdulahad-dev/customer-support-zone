@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1001",
+    "title": "Login Issue",
+    "description": "Customer is unable to login to their account using valid credentials, and receives an unexpected error message every time they attempt to sign in to the platform.",
+    "customer": "John Doe",
+    "priority": "High Priority",
+    "status": "Open",
+    "createdAt": "03/07/2026"
+  },
+  {
+    "id": "1002",
+    "title": "Payment Failure",
+    "description": "Customer reports that payment transactions fail repeatedly when attempting to pay via credit card, despite sufficient balance and valid card details, causing frustration and delay.",
+    "customer": "Jane Smith",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "03/06/2026"
+  },
+  {
+    "id": "1003",
+    "title": "Account Update Request",
+    "description": "Customer requests to update personal account information including email address, phone number, and billing details but is unable to do so from the profile settings page.",
+    "customer": "Michael Brown",
+    "priority": "Medium Priority",
+    "status": "In-Progress",
+    "createdAt": "03/05/2026"
+  },
+  {
+    "id": "1004",
+    "title": "Bug in Dashboard",
+    "description": "Customer reports that the graph chart on the dashboard page does not load properly, and sometimes shows blank or incorrect data when accessed from the analytics section.",
+    "customer": "Emily Davis",
+    "priority": "High Priority",
+    "status": "Open",
+    "createdAt": "03/04/2026"
+  },
+  {
+    "id": "1005",
+    "title": "Feature Request: Dark Mode",
+    "description": "Customer has requested a dark mode feature to be added to the application interface to reduce eye strain during night usage and improve overall usability.",
+    "customer": "Chris Wilson",
+    "priority": "Low Priority",
+    "status": "Open",
+    "createdAt": "03/03/2026"
+  },
+  {
+    "id": "1006",
+    "title": "Unable to Upload File",
+    "description": "Customer reports that the file upload button on the profile page is unresponsive, and attempts to attach documents fail multiple times across different browsers and devices.",
+    "customer": "Sarah Lee",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "03/02/2026"
+  },
+  {
+    "id": "1007",
+    "title": "Email Notification Delay",
+    "description": "Customer notices significant delays in receiving email notifications from the system, including alerts for orders, messages, and updates, which affects timely responses and workflow.",
+    "customer": "David Clark",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "03/01/2026"
+  },
+  {
+    "id": "1008",
+    "title": "Password Reset Link Broken",
+    "description": "Customer reports that the password reset link sent via email does not redirect correctly, preventing them from resetting their password and accessing their account temporarily.",
+    "customer": "Laura Martinez",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "02/28/2026"
+  },
+  {
+    "id": "1009",
+    "title": "App Crash on iOS",
+    "description": "Customer experiences immediate crashes when opening the app on iOS 16 devices, making it impossible to use key features such as messaging, payments, and profile management.",
+    "customer": "Kevin Taylor",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "02/27/2026"
+  },
+  {
+    "id": "1010",
+    "title": "Incorrect Billing Amount",
+    "description": "Customer was billed twice for the same order, and the invoice shows incorrect amounts, leading to confusion and requests for urgent refund or correction of the billing error.",
+    "customer": "Amy Johnson",
+    "priority": "High Priority",
+    "status": "Open",
+    "createdAt": "02/26/2026"
+  },
+  {
+    "id": "1011",
+    "title": "Profile Picture Not Updating",
+    "description": "Customer reports that after uploading a new profile picture, the image does not update or display correctly on the platform, even after clearing cache and refreshing the page.",
+    "customer": "Brian White",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "02/25/2026"
+  },
+  {
+    "id": "1012",
+    "title": "Refund Request",
+    "description": "Customer has requested a refund for order #12345 due to receiving a defective product, and is seeking confirmation on processing time and the refund method available.",
+    "customer": "Olivia King",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "02/24/2026"
+  }
+]

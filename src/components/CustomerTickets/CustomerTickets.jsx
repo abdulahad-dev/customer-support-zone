@@ -1,12 +1,68 @@
+import { use } from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
 
-const CustomerTickets = () => {
+const CustomerTickets = ({ customerTicketsPromise }) => {
+  const customerTicketData = use(customerTicketsPromise);
+
+  console.log(customerTicketData);
+
   return (
     <div className="grid grid-cols-4 gap-6 max-w-7xl mx-auto pb-18 mt-18">
       <div className="col-span-3">
         <h2 className="text-2xl font-bold">Customer Tickets</h2>
+
         <div className="grid grid-cols-2 gap-4 my-4">
-          <div className="card w-full bg-base-100 shadow-sm">
+          {customerTicketData.map((customerTicket) => (
+            <div
+              key={customerTicket.id}
+              className="card w-full bg-base-100 shadow-sm"
+            >
+              <div className="card-body">
+                <div className="flex justify-between">
+                  <h2 className="text-lg font-bold">{customerTicket.title}</h2>
+                  <span
+                    className={`flex items-center gap-2 ${customerTicket.status === 'Open' ? 'bg-green-200' : 'bg-yellow-200'}  px-2 py-1 rounded-full`}
+                  >
+                    <span
+                      className={`w-3 h-3 ${customerTicket.status === 'Open' ? 'bg-green-600' : 'bg-yellow-600'} rounded-full`}
+                    ></span>
+                    <span
+                      className={`${customerTicket.status === 'Open' ? 'text-green-700' : 'text-yellow-700'} font-medium`}
+                    >
+                      {customerTicket.status}
+                    </span>
+                  </span>
+                </div>
+                <p className="line-clamp-2 text-gray-500 font-medium">
+                  {customerTicket.description}
+                </p>
+                <div className="flex justify-between mt-3">
+                  <div>
+                    <span className="text-gray-500 font-medium">
+                      #{customerTicket.id}
+                    </span>
+                    {/* {`country ${visited && 'country-visited'}`} */}
+                    <span
+                      className={`${customerTicket.priority === 'Medium Priority' ? 'text-yellow-500' : customerTicket.priority === 'High Priority' ? 'text-red-500' : 'text-green-500'}  font-medium ms-3`}
+                    >
+                      {customerTicket.priority}
+                    </span>
+                  </div>
+                  <div className="flex">
+                    <span className="text-gray-500 font-medium me-3">
+                      {customerTicket.customer}
+                    </span>
+                    <span className="flex items-center text-gray-500 font-medium">
+                      <FaCalendarAlt />{' '}
+                      <span className="ms-1"> {customerTicket.createdAt}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* <div className="card w-full bg-base-100 shadow-sm">
             <div className="card-body">
               <div className="flex justify-between">
                 <h2 className="text-lg font-bold">
@@ -145,42 +201,7 @@ const CustomerTickets = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="card w-full bg-base-100 shadow-sm">
-            <div className="card-body">
-              <div className="flex justify-between">
-                <h2 className="text-lg font-bold">
-                  Login Issues - Can't Access Account
-                </h2>
-                <span className="flex items-center gap-2 bg-green-200 px-2 py-1 rounded-full">
-                  <span className="w-3 h-3 bg-green-700 rounded-full"></span>
-                  <span className="text-green-700 font-medium">Online</span>
-                </span>
-              </div>
-              <p className="line-clamp-2 text-gray-500 font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate dolore laudantium maxime consequatur veniam, obcaecati
-                quo harum voluptatibus recusandae rerum voluptatem soluta
-                voluptas nemo atque enim consequuntur corporis est repudiandae.
-              </p>
-              <div className="flex justify-between mt-3">
-                <div>
-                  <span className="text-gray-500 font-medium">#1001</span>
-                  <span className="text-red-500 font-medium ms-3">
-                    HIGH PRIORITY
-                  </span>
-                </div>
-                <div className="flex">
-                  <span className="text-gray-500 font-medium me-3">
-                    John Smith
-                  </span>
-                  <span className="flex items-center text-gray-500 font-medium">
-                    <FaCalendarAlt /> <span className="ms-1"> 01/17/2026</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
