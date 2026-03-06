@@ -2,7 +2,7 @@ import Vector1 from '../../assets/vector1.png';
 
 const Banner = () => {
   return (
-    <div className="flex gap-6 max-w-7xl mx-auto px-4 pt-18">
+    <div className="flex gap-6 max-w-7xl mx-auto pt-18">
       <div className="card bg-gradient-to-r from-[#632EE3] to-[#9F62F2] image-full w-full shadow-sm">
         <img
           className="absolute left-0 top-0 h-full w-50"

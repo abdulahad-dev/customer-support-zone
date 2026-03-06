@@ -2,7 +2,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 
 const CustomerTickets = () => {
   return (
-    <div className="grid grid-cols-4 gap-6 max-w-7xl mx-auto pt-4 pb-18 mt-18">
+    <div className="grid grid-cols-4 gap-6 max-w-7xl mx-auto pb-18 mt-18">
       <div className="col-span-3">
         <h2 className="text-2xl font-bold">Customer Tickets</h2>
         <div className="grid grid-cols-2 gap-4 my-4">
