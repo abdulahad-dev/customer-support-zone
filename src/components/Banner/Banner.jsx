@@ -1,32 +1,42 @@
+import Vector1 from '../../assets/vector1.png';
 
 const Banner = () => {
-    return (
-        <div>
-            <div className="card bg-primary text-primary-content w-96">
-                <div className="card-body">
-                    <h2 className="card-title">Card title!</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                    <div className="card-actions justify-end">
-                    <button className="btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div className="card bg-base-100 image-full w-96 shadow-sm">
-                <figure>
-                    <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">Card Title</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                    <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="flex gap-6 max-w-7xl mx-auto px-4 pt-18">
+      <div className="card bg-gradient-to-r from-[#632EE3] to-[#9F62F2] image-full w-full shadow-sm">
+        <img
+          className="absolute left-0 top-0 h-full w-50"
+          src={Vector1}
+          alt="Left"
+        />
+        <div className="flex flex-col justify-center p-0 h-full items-center text-white text-center p-14">
+          <h2 className="card-title">In-Progress</h2>
+          <p className="text-4xl font-bold">0</p>
         </div>
-    );
+        <img
+          className="absolute right-0  top-0 h-full w-50 scale-x-[-1]"
+          src={Vector1}
+          alt="right"
+        />
+      </div>
+      <div className="card bg-gradient-to-r from-[#54CF68] to-[#00827A] image-full w-full shadow-sm">
+        <img
+          className="absolute left-0 top-0 h-full w-50"
+          src={Vector1}
+          alt="Left"
+        />
+        <div className="flex flex-col justify-center p-0 h-full items-center text-white text-center p-14">
+          <h2 className="card-title">Resolved</h2>
+          <p className="text-4xl font-bold">0</p>
+        </div>
+        <img
+          className="absolute right-0  top-0 h-full w-50 scale-x-[-1]"
+          src={Vector1}
+          alt="right"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
