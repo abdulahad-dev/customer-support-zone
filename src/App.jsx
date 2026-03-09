@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import './App.css';
 import Banner from './components/Banner/Banner';
 import CustomerTickets from './components/CustomerTickets/CustomerTickets';
@@ -13,11 +13,34 @@ const fetchCustomerTickets = async () => {
 function App() {
   const customerTicketsPromise = fetchCustomerTickets();
 
+  const [selectedTickets, setSelectedTickets] = useState([]); // In-Progress
+  const [resolvedTickets, setResolvedTickets] = useState([]); // Resolved
+
+  const handleSelectTicket = (ticket) => {
+    if (
+      !selectedTickets.find((t) => t.id === ticket.id) &&
+      !resolvedTickets.find((t) => t.id === ticket.id)
+    ) {
+      setSelectedTickets([...selectedTickets, ticket]);
+    }
+  };
+
+  const handleCompleteTicket = (ticket) => {
+    setSelectedTickets(selectedTickets.filter((t) => t.id !== ticket.id));
+    setResolvedTickets([...resolvedTickets, ticket]);
+  };
+
+  const inProgressCount = selectedTickets.length;
+  const resolvedCount = resolvedTickets.length;
+
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <div className="bg-gray-200">
-        <Banner></Banner>
+        <Banner
+          inProgressCount={inProgressCount}
+          resolvedCount={resolvedCount}
+        />
         <Suspense
           fallback={
             <span className="loading loading-spinner loading-xl"></span>
@@ -25,12 +48,14 @@ function App() {
         >
           <CustomerTickets
             customerTicketsPromise={customerTicketsPromise}
-          ></CustomerTickets>
+            handleSelectTicket={handleSelectTicket}
+            selectedTickets={selectedTickets}
+            resolvedTickets={resolvedTickets}
+            handleCompleteTicket={handleCompleteTicket}
+          />
         </Suspense>
       </div>
-      <div className="bg-neutral text-neutral-content">
-        <Footer></Footer>
-      </div>
+      <Footer />
     </>
   );
 }
