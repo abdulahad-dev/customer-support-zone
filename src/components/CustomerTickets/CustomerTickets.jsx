@@ -1,5 +1,7 @@
-import { use } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CustomerTickets = ({
   customerTicketsPromise,
@@ -8,7 +10,30 @@ const CustomerTickets = ({
   resolvedTickets,
   handleCompleteTicket,
 }) => {
-  const customerTicketData = use(customerTicketsPromise);
+  const [customerTicketData, setCustomerTicketData] = useState([]);
+
+  // Fetch data once
+  useEffect(() => {
+    customerTicketsPromise.then((data) => setCustomerTicketData(data));
+  }, [customerTicketsPromise]);
+
+  // Toast for completing ticket
+  const handleComplete = (ticket) => {
+    handleCompleteTicket(ticket);
+    toast.success(`Ticket "${ticket.title}" completed! 🎉`, {
+      position: 'top-right',
+      autoClose: 3000,
+    });
+  };
+
+  // Toast for selecting ticket
+  const handleCardClick = (ticket) => {
+    handleSelectTicket(ticket);
+    toast.info(`Ticket "${ticket.title}" added to Task Status ✅`, {
+      position: 'top-right',
+      autoClose: 2500,
+    });
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto pb-18 mt-10 px-4 lg:px-0">
@@ -19,8 +44,8 @@ const CustomerTickets = ({
           {customerTicketData.map((ticket) => (
             <div
               key={ticket.id}
-              onClick={() => handleSelectTicket(ticket)}
-              className="card w-full bg-base-100 shadow-sm cursor-pointer"
+              onClick={() => handleCardClick(ticket)}
+              className="card w-full bg-base-100 shadow-sm cursor-pointer hover:shadow-md transition"
             >
               <div className="card-body">
                 <div className="flex justify-between items-center">
@@ -85,7 +110,7 @@ const CustomerTickets = ({
                 <button
                   type="button"
                   className="btn btn-active btn-success w-full text-white font-bold tracking-wide mt-1"
-                  onClick={() => handleCompleteTicket(ticket)}
+                  onClick={() => handleComplete(ticket)}
                 >
                   Complete
                 </button>
@@ -114,6 +139,8 @@ const CustomerTickets = ({
           </div>
         </div>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };
