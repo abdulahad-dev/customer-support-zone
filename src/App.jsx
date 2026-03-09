@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 
 const fetchCustomerTickets = async () => {
-  const res = await fetch('/public/customerTickets.json');
+  const res = await fetch('/customerTickets.json');
   return res.json();
 };
 
